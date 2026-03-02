@@ -4,6 +4,7 @@
 
 recapHPC/index
 hpcAtUZH/index
+apptainer/index
 specialTopics/index
 ```
 
