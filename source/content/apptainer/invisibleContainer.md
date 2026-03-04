@@ -1,4 +1,4 @@
-# The "Invisible" Container
+## The "Invisible" Container
 
 ```{compound}
 {.bigger}
@@ -26,7 +26,7 @@ As a result, projects can be navigated, code edited, and scripts executed normal
 The container acts as a transparent lens that simply provides the correct software dependencies.
 {% endif %}
 
-## The Hidden Cost
+### The Hidden Cost
 ```{compound}
 {.bigger}
 **Reproducibility vs. Convenience**

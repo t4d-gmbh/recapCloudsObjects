@@ -5,6 +5,7 @@
 recapHPC/index
 hpcAtUZH/index
 apptainer/index
+dataHandling/index
 specialTopics/index
 ```
 
