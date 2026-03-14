@@ -73,7 +73,7 @@ Heavy I/O workloads against `/home` degrade performance for all users on the sha
 **`/scratch` (Temporary):**
 A shared scratch space is available for staging large datasets and intermediate results during active computation.
 Like `/home`, it is backed by CephFS and accessible from all nodes.
-Scratch storage is subject to automated purging policies — data should be moved elsewhere once processing is complete.
+Scratch storage is subject to automated purging policies: data should be moved elsewhere once processing is complete.
 
 ### Performance Considerations
 

@@ -50,11 +50,11 @@ The Alps infrastructure uses a modern multi-layer orchestration stack:
 
 - **Kubernetes** manages services at the platform level (deployed on bare metal, possibly via [Rancher](https://www.rancher.com/))
 - **vCluster** provides lightweight, isolated Kubernetes environments per tenant or project, so different research groups operate in separate virtual clusters without interference
-- **Slurm** remains the user-facing workload manager — researchers submit jobs with the same `sbatch`/`srun` commands used on the Science Cluster
+- **Slurm** remains the user-facing workload manager. Researchers submit jobs with the same `sbatch`/`srun` commands used on the Science Cluster
 
 ### Software Environments (uenv)
 
-Instead of traditional module systems or container-only workflows, Alps uses [uenv](https://docs.cscs.ch/software/uenv/) — a SquashFS-based approach to software distribution.
+Instead of traditional module systems or container-only workflows, Alps uses [uenv](https://docs.cscs.ch/software/uenv/) which is a SquashFS-based approach to software distribution.
 
 A uenv packages an entire software stack (compilers, libraries, applications) into a compressed, read-only SquashFS image.
 At job start, this image is mounted into the filesystem, providing all required software without thousands of individual file lookups against the cluster's metadata server.
