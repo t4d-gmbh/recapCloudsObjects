@@ -25,7 +25,7 @@ _Intra‑host GPU-GPU_:
 ## GPU Communication Overview
 
 Modern high‑performance systems move data between graphics processors in two distinct contexts: across separate physical machines (inter‑host) and within the same machine (intra‑host).
-The choice of interconnect determines both the latency—the time a small message needs to travel—and the throughput—the amount of data that can be streamed continuously.
+The choice of interconnect determines both the latency (the time a small message needs to travel) and the throughput (the amount of data that can be streamed continuously).
 Below is a concise description of the typical characteristics of each path.
 
 ### Inter‑Host GPU ↔ GPU (InfiniBand)
@@ -47,7 +47,7 @@ Inside a single server the communication path is much shorter, and the performan
 
 A GPU attached to a PCIe Gen 5 x16 slot can exchange data at up to approximately 63 GB/s in each direction.
 The latency for a small message is about 0.5 – 0.8 µs.
-The older Gen 4 generation offers roughly half the bandwidth—around 31 GB/s—and a latency in the range of 0.8 – 1.2 µs.
+The older Gen 4 generation offers roughly half the bandwidth (around 31 GB/s) and a latency in the range of 0.8 – 1.2 µs.
 
 #### NVLink
 
@@ -57,7 +57,7 @@ Latency is extremely low, on the order of a tenth of a microsecond (typically 0.
 
 #### GPU → CPU → GPU (host‑mediated copy)
 
-If a transfer must pass through host memory—GPU to host, then host to the second GPU—the data traverses the PCIe bus twice.
+If a transfer must pass through host memory (GPU to host, then host to the second GPU) the data traverses the PCIe bus twice.
 This doubles the effective latency to roughly 1 – 1.5 µs on Gen 5 and cuts the usable bandwidth to about half of the raw PCIe rate, i.e., around 30 GB/s on Gen 5 and 15 GB/s on Gen 4.
 The extra hop also introduces additional software overhead in the kernel and driver stacks.
 

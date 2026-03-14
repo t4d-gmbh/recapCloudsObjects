@@ -25,7 +25,8 @@ The procedure for configuring agent forwarding depends on the local operating sy
 ::::{tab-set}
 :::{tab-item} Linux
 1. **Check the agent:** Run `ssh-add -l` to view currently loaded keys. If no identities are found, proceed to the next step.
-2. **Launch the agent:** * **Temporary (current session only):** Start a new process with `eval "$(ssh-agent -s)"`.
+2. **Launch the agent:** 
+   * **Temporary (current session only):** Start a new process with `eval "$(ssh-agent -s)"`.
    * **Permanent setup (via systemd):** First, create the service file at `~/.config/systemd/user/ssh-agent.service` with the following content:
      ```ini
      [Unit]
