@@ -1,7 +1,7 @@
 ## Project Root Structure
 
 {.centered}
-Keep it **persistent** across all your projects -> fast onboarding, zero guesswork.
+Keep it **persistent** across all your projects {octicon}`arrow-right` fast onboarding, zero guesswork.
 
 ```{admonition} Golden rule
 :class: tip margin
