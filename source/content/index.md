@@ -5,9 +5,7 @@
 recapHPC/index
 hpcAtUZH/index
 apptainer/index
-{% if slide %}
-recapExoHelloWorld/index
-{% endif %}
+{% if slide %} recapExoHelloWorld/index {% endif %}
 specialTopics/index
 ```
 
