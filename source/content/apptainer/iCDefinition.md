@@ -4,6 +4,12 @@ sd_hide_title: true
 ## The Definition File
 
 {% if slide %}
+:::::{grid} 1 2 2 2
+:gutter: 3
+
+::::{grid-item}
+**The Definition File**
+
 ```docker
 # containers/env.def
 Bootstrap: docker 
@@ -36,6 +42,29 @@ From: python:3.13-slim
 #%runscript
     # exec python "$@" 
 ```
+::::
+::::{grid-item}
+**Using the Environment**
+
+In a project adhering to the **Separation of Concerns** (SoC) this container can be **used for all scripts**, following the general call signature:
+
+```bash
+apptainer exec --pwd /app \
+               --env-file .env \
+               --bind "$(pwd):/app" \
+               containers/env.sif \
+               python scripts/my_script.py
+
+```
+
+:::{admonition} Fetch from registry
+:class: note 
+```bash
+apptainer shell oras://ghcr.io/<owner>/<env-sif>:1.0.1
+```
+:::
+::::
+:::::
 {% endif %}
 
 {% if page %}
@@ -106,40 +135,8 @@ An exemplary definition of such an "Invisible" container overlay can be found in
 :::
 
 
+{% if page %}
 ## Using the Environment
-{% if slide %}
-
-:::::{grid} 1 2 2 2
-:gutter: 3
-
-::::{grid-item}
-:class: sd-m-auto
-
-In a project adhering to the **Separation of Concerns** (SoC) this container can be **used for all scripts**, following the general call signature:
-
-::::
-::::{grid-item}
-:class: sd-m-auto
-
-```bash
-apptainer exec --pwd /app \
-               --env-file .env \
-               --bind "$(pwd):/app" \
-               containers/env.sif \
-               python scripts/my_script.py
-
-```
-::::
-:::::
-
-:::{admonition} Fetch from registry
-:class: note 
-```bash
-apptainer shell oras://ghcr.io/<owner>/<env-sif>:1.0.1
-```
-:::
-
-{% else %}
 
 To build this container from the root of a SoC project:
 
