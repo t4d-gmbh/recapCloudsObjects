@@ -10,7 +10,7 @@ If it's human-created, it belongs in version control.
 :gutter: 2
 
 ::::{grid-item-card} 1. Use it
-Track **all** human-created files — code, configs, documentation, manuscripts.
+Track **all** human-created files: code, configs, documentation, manuscripts.
 
 Small, frequent commits > large, rare ones.
 ::::
@@ -22,7 +22,7 @@ Maintain a `CHANGELOG` documenting version history.
 ::::
 
 ::::{grid-item-card} 3. Use remote services
-Mirror to **GitHub/GitLab** for backup and collaboration.
+Mirror to **GitHub/GitLab/Forgejo** for backup and collaboration.
 
 Leverage **Issues** for task tracking and **CI/CD** for automated testing and deployment.
 ::::
