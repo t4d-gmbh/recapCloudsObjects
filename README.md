@@ -1,8 +1,8 @@
-# Efficient Cluster Computation
+# Clouds & Objects
 
 <!-- include-before -->
 
-This is <img src="./source/_static/T4D_logo.svg" alt="T4D" width="25" height="25">'s take on efficiently working with an HPC Cluster.
+This is <img src="./source/_static/T4D_logo.svg" alt="T4D" width="25" height="25">'s take on getting ready to use the Cloud and Object Storage.
 
 ---
 
