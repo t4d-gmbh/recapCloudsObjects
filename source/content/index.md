@@ -3,6 +3,10 @@
 :caption: Efficient Cluster Computation
 
 recapLastWeek/index
+recapExoHelloWorld/index
+{% if slide %}
+apptainerRunExecShell/index
+{% endif %}
 recapHPC/index
 hpcAtUZH/index
 apptainer/index
