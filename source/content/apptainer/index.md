@@ -10,9 +10,9 @@
 ./dockerVS
 ./apptainerVS
 ./hpcContext
-./systemPackages.md
-./invisibleContainer.md
-./iCDefinition.md
+./systemPackages
+./invisibleContainer
+./iCDefinition
 ./clusterExo1
 ```
 
@@ -32,8 +32,6 @@
 ```{include} ./invisibleContainer.md
 ```
 ```{include} ./iCDefinition.md
-```
-```{include} ./invisibleContainer.md
 ```
 
 {% endif %}

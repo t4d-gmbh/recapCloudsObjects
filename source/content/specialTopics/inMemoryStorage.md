@@ -1,3 +1,4 @@
+(inMemoryStorage)=
 ## Using Shared Memory (`/dev/shm`)
 
 {% if slide %}
