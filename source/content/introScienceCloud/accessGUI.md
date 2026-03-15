@@ -14,15 +14,19 @@ Everyone clicks through the creation of a VM together.
 :::{grid-item-card} 1. Launch Instance
 - Navigate to **Compute → Instances → Launch Instance**
 - Choose a **name**
-- Select a **flavor** (e.g. `4cpu-16ram`)
-- Pick a **boot source** (image: Ubuntu 22.04)
+- Pick a **boot source** (image: `ubuntu-jammy-22.04`)
+- Select a **flavor** (e.g. `1cpu-4ram-hpcv3`)
 - Set **disk size** and check **block storage** options for the "home" disk
 :::
 
 :::{grid-item-card} 2. Network & Security
-- Assign to an existing **network**
-- Configure **Security Group** (open port 22 for SSH)
-- Add your **SSH key pair**
+- Assign to an existing **network** (e.g. `uzh-only`)
+- Configure **Network Ports** (e.g., leave them empty for now)
+- Configure **Security Group** (e.g., `default` which opens port 22 for SSH)
+- Add your **SSH key pair**: 
+   - Upload your `~/.ssh/mysecret.pub`
+   - Key Pair Name: e.g. `mysecret`
+   - Key Type: `SSH Key`
 :::
 
 :::{grid-item-card} 3. Connect
