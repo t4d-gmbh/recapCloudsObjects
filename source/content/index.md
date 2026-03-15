@@ -9,6 +9,10 @@ recapExoHelloWorld/solution
 bindsInSoC/index
 recapExoHelloWorld/cicd
 recapExoHelloWorld/remoteExecution
+{% if build == "slides" %}
+introScienceCloud/index
+swiftObjectStorage/index
+{% endif %}
 recapHPC/index
 hpcAtUZH/index
 apptainer/index
