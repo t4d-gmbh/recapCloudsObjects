@@ -18,4 +18,10 @@ Object Storage from the UZH Science Cloud.
 
 {% else %}
 <!-- BUILDING THE PAGES -->
+```{include} ./recapCloudServices.md
+```
+```{include} ./accessObjectStorage.md
+```
+```{include} ./clientsObjectStorage.md
+```
 {% endif %}

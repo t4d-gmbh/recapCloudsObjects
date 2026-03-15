@@ -1,8 +1,8 @@
 # Ansible Detour
 
 
-```{admonition} jnfrastructure as Code (IaC)
-:class: tip, margin
+```{admonition} Infrastructure as Code (IaC)
+:class: tip
 
 
 {% if slide %}

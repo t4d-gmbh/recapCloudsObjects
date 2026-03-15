@@ -11,9 +11,7 @@ recapExoHelloWorld/cicd
 recapExoHelloWorld/remoteExecution
 introScienceCloud/index
 primerAnsible/index
-{% if build == "slides" %}
 swiftObjectStorage/index
-{% endif %}
 recapHPC/index
 apptainer/index
 ```
