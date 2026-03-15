@@ -14,7 +14,6 @@ introScienceCloud/index
 swiftObjectStorage/index
 {% endif %}
 recapHPC/index
-hpcAtUZH/index
 apptainer/index
 specialTopics/index
 ```
