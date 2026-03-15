@@ -9,8 +9,9 @@ recapExoHelloWorld/solution
 bindsInSoC/index
 recapExoHelloWorld/cicd
 recapExoHelloWorld/remoteExecution
+introScienceCloud/index
+primerAnsible/index
+swiftObjectStorage/index
 recapHPC/index
-hpcAtUZH/index
 apptainer/index
-specialTopics/index
 ```
