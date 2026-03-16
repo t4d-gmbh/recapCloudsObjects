@@ -1,10 +1,12 @@
+---
+sd_hide_title: true
+---
 ## Building & Running
 
 :::{admonition} <i class="fa-solid fa-comments"></i> Discussion
 :class: note
 
 **Who managed to build and run the Apptainer container locally?**
-
 - With or without help?
 - Any issues encountered during setup?
 :::
@@ -23,27 +25,22 @@
      pyproject.toml /app/
      ...
    %post
-     ...
      uv pip install --no-cache --compile-bytecode .
      ...
    %environment
-     ...
      export PATH="/opt/venv/bin:$PATH"
      ...
    %runscript
      ...
      exec "$@"
    ```
-2. ⚙️ **Build**  
-   
-   Execute from the repository root, passing the manifest path:
+2. ⚙️ **Build:**  Execute from the repository root:
    
    ```bash
    apptainer build img.sif containers/pipeline.def
    
    ```
-3. 🚀 **Execute**  
-   Apptainer supports the `--env-file` option for runtime injection:
+3. 🚀 **Execute:** Use e.g. the `--env-file` option for runtime injection:
    ```bash
    apptainer run --env-file .env img.sif
    ```
