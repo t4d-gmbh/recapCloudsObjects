@@ -23,7 +23,7 @@ This already **uses all your CPUs**: NumPy delegates to compiled C/Fortran BLAS 
 :::{grid-item}
 :columns: 6
 
-:::{admonition} ⚠️ Oversubscription
+:::{admonition} Oversubscription
 :class: warning
 
 Wrapping this in `multiprocessing` or parallel loops causes **thread contention**: each worker spawns its own BLAS threads across all cores, "thrashing" each core.
