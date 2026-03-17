@@ -29,11 +29,9 @@ For the full playbook rever to the [ansibleOneShot](https://github.com/pSciComp/
 ---
 - name: One Shot System Configuration
   hosts: all
-  become: true
   vars_files:
     - secrets.yml
   vars:
-    # Default variables; can be overridden at runtime
     new_username: "sysadmin"
     ...
   tasks:
@@ -41,8 +39,6 @@ For the full playbook rever to the [ansibleOneShot](https://github.com/pSciComp/
       ansible.builtin.apt:
         update_cache: true
         upgrade: dist
-        cache_valid_time: 3600
-
     ...
     - name: Install system dependencies and utilities
       ansible.builtin.apt:
@@ -50,7 +46,6 @@ For the full playbook rever to the [ansibleOneShot](https://github.com/pSciComp/
           - git
           ...
         state: present
-
     - name: Provision new user account
       ansible.builtin.user:
         name: "{{ new_username }}"
@@ -67,10 +62,7 @@ For the full playbook rever to the [ansibleOneShot](https://github.com/pSciComp/
     - name: Deploy OpenStack credentials file
       ansible.builtin.copy:
         src: "{{ openstack_rc_file }}"
-        dest: "/home/{{ new_username }}/.openrc"
-        owner: "{{ new_username }}"
-        group: "{{ new_username }}"
-        mode: '0600'
+        ...
       when: openstack_rc_file is defined
 ```
 {% endraw %}
@@ -81,37 +73,30 @@ For the full playbook rever to the [ansibleOneShot](https://github.com/pSciComp/
 
 {% endif %}
 
----
-
 ### Execution Protocol
 
 {% if page %}
 Reproducibility is maintained by separating code from configuration data. Secrets are isolated in an encrypted vault, while environmental paths are passed as runtime parameters.
 {% endif %}
 
-**1. Vault Initialization**
 {% if page %}
+**1. Vault Initialization**
 An encrypted file must be created to store the internal SSH keypair.
 {% endif %}
-
 ```bash
+# Init vault
 ansible-vault create secrets.yml
-
 ```
-
 ```yaml
 vault_private_key: |
   -----BEGIN OPENSSH PRIVATE KEY-----
-  b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
   ...
   -----END OPENSSH PRIVATE KEY-----
-
 vault_public_key: "ssh-ed25519 AAAAC3NzaC1l... user@internal"
-
 ```
 
-**2. Playbook Execution**
 {% if page %}
+**2. Playbook Execution**
 The playbook is invoked using the `ansible-playbook` binary.
 External variables are injected via the `-e` (extra vars) parameter, pointing to local files on the control node.
 The `--ask-vault-pass` flag triggers the decryption sequence for `secrets.yml`.
@@ -124,7 +109,6 @@ ansible-playbook setup.yml \
   -e "new_username=developer" \
   -e "public_key_file=~/.ssh/id_ed25519.pub" \
   -e "openstack_rc_file=~/project-openrc.sh"
-
 ```
 
 

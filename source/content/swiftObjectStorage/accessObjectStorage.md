@@ -2,10 +2,6 @@
 
 {% if slide %}
 
-### Endpoint Retrieval & Authentication
-
-Interaction with the object storage REST API requires the gateway URL and a valid authentication token.
-
 :::{admonition} Internal networking
 :class: tip margin
 On internal netwoks it might be that requests are always routed outwards.
@@ -20,9 +16,7 @@ export NO_PROXY=$NO_PROXY,cloud.science-it.uzh.ch
 :gutter: 2
 
 ::::{grid-item-card} Manual Inspection
-
 ```bash
-# Retrieve the Swift endpoint catalog
 openstack catalog show swift
 # Generate a temporary access token
 openstack token issue
@@ -40,7 +34,6 @@ export RGW_TOKEN=$(openstack token issue -f value -c id)
 
 ::::
 :::::
-
 {% endif %}
 
 {% if page %}
@@ -68,12 +61,12 @@ export RGW_TOKEN=$(openstack token issue -f value -c id)
 :class: warning
 Authentication tokens issued by Keystone are **temporary** and typically expire after one hour. Once expired, API requests will return `401 Unauthorized` errors, necessitating the generation of a new token.
 :::
-{% endif %}
 
 ---
 
 ### Interface Methodologies
 
+{% endif %}
 {% if slide %}
 :::::{grid} 1 2 2 2
 :gutter: 2
@@ -88,15 +81,10 @@ curl -i -X GET "${RGW_URL}" \
 curl -i -X PUT "${RGW_URL}/bucket/file.txt" \
   -H "X-Auth-Token: ${RGW_TOKEN}" \
   --data-binary "@./file.txt"
-
-# Delete an object
-curl -i -X DELETE "${RGW_URL}/bucket/file.txt" \
-  -H "X-Auth-Token: ${RGW_TOKEN}"
-
 ```
 :::{admonition} Token Expiration
 :class: warning
-Keystone authentication tokens are **temporary** (typically expiring after 1 hour). The RC file must be re-sourced, or a new token issued, upon expiration.
+Keystone authentication tokens are **temporary** (typically expiring after 1 hour).
 :::
 
 ::::
@@ -123,7 +111,6 @@ secret_key = ${SECRET_KEY}
 use_https = True
 
 ```
-
 ::::
 :::::
 

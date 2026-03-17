@@ -4,9 +4,9 @@
 
 OpenStack offers a powerful command-line interface (CLI), called [`openstack`](https://www.google.com/search?q=%5Bhttps://docs.openstack.org/python-openstackclient/latest/cli/man/openstack.html%23synopsis%5D(https://docs.openstack.org/python-openstackclient/latest/cli/man/openstack.html%23synopsis)), which is based on the [Python OpenStack SDK](https://opendev.org/openstack/openstacksdk).
 
-The `openstack` client provides an extensive collection of commands, enabling programmatic and reproducible interaction with an OpenStack cloud.
-
 {% else %}
+
+The `openstack` client provides an extensive collection of commands, enabling programmatic and reproducible interaction with an OpenStack cloud.
 
 For automated deployments and strict reproducibility, GUI-based instantiation is generally replaced by command-line or infrastructure-as-code methodologies. OpenStack provides a comprehensive command-line interface (CLI) named [`openstack`](https://www.google.com/search?q=%5Bhttps://docs.openstack.org/python-openstackclient/latest/cli/man/openstack.html%23synopsis%5D(https://docs.openstack.org/python-openstackclient/latest/cli/man/openstack.html%23synopsis)), which acts as a wrapper around the underlying REST APIs via the [Python OpenStack SDK](https://opendev.org/openstack/openstacksdk).
 
@@ -56,9 +56,6 @@ This file must be present in the local environment where the `openstack` CLI is 
 ```bash
 # 1. Authenticate the session using the downloaded RC file
 source project-openrc.sh
-
-# openstack keypair create --public-key ~/.ssh/id_ed25519.pub laptopKey
-
 # 2. Provision the compute instance
 openstack server create \
     --flavor 1cpu-4ram-hpcv3 \
